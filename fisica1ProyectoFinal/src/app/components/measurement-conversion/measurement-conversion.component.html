@@ -1,0 +1,105 @@
+<div>
+    <input type="hidden" #selection2 />
+
+    <div class="general__displayFlexCenter">
+        <div class="card card-small" (click)="selection2.value = 'time'" tabindex="0">
+            <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+            </svg>
+            <span>Tiempo</span>
+        </div>
+        <div class="card card-small" (click)="selection2.value = 'weight'" tabindex="0">
+            <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+            </svg>
+            <span>Masa</span>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div [ngSwitch]="selection2.value" class="meassure__container">
+        <pre *ngSwitchDefault>
+      <form >
+      <div class="general__displayFlex">
+        <!-- ************************************************************** -->
+        <div class="meassure__subContainer">
+          <!-- INPUT -->
+          <mat-form-field>
+            <mat-label>{{nameValue1}}</mat-label>
+            <input type="number" matInput value={{numericValue1}}  [(ngModel)]="numericValue1"  [ngModelOptions]="{standalone: true}" (change)="onChangeNumericValue1($event)" >
+          </mat-form-field> 
+          <!-- SELECT -->
+          <mat-form-field  >
+            <mat-label>Seleccione</mat-label>
+            <mat-select [(value)]="nameValue1" (selectionChange)="onChangeSelected1()">
+              <mat-option *ngFor="let food of object1" [value]="food.value">
+                {{food.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          </div>
+        <!-- ************************************************************** -->
+        <div class="meassure__subContainer">
+          <!-- INPUT -->
+          <mat-form-field>
+            <mat-label>{{nameValue2}}</mat-label>
+            <input type="number" matInput value={{numericValue2}}  [(ngModel)]="numericValue2"  [ngModelOptions]="{standalone: true}" (change)="onChangeNumericValue2($event)">
+          </mat-form-field>
+          <!-- SELECT -->
+          <mat-form-field >  
+            <mat-label>Seleccione</mat-label>
+            <mat-select [(value)]="nameValue2" (selectionChange)="onChangeSelected2()">
+              <mat-option *ngFor="let food of object1" [value]="food.value">
+                {{food.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      </form>
+    </pre>
+        <!-- ************************************************************** -->
+        <!-- ************************************************************** -->
+        <!-- ************************************************************** -->
+        <pre *ngSwitchCase="'time'">
+      <form >
+      <div class="general__displayFlex">
+        <!-- ************************************************************** -->
+        <div class="meassure__subContainer">
+          <!-- INPUT -->
+          <mat-form-field>
+            <mat-label>{{nameValue3}}</mat-label>
+            <input type="number" matInput value={{numericValue3}}  [(ngModel)]="numericValue3"  [ngModelOptions]="{standalone: true}" (change)="onChangeNumericValue3($event)" >
+          </mat-form-field> 
+          <!-- SELECT -->
+          <mat-form-field >
+            <mat-label>Seleccione</mat-label>
+            <mat-select [(value)]="nameValue3" (selectionChange)="onChangeSelected3()">
+              <mat-option *ngFor="let food of object2" [value]="food.value">
+                {{food.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          </div>
+        <!-- ************************************************************** -->
+        <div class="meassure__subContainer">
+          <!-- INPUT -->
+          <mat-form-field >
+            <mat-label>{{nameValue4}}</mat-label>
+            <input type="number" matInput value={{numericValue4}}  [(ngModel)]="numericValue4"  [ngModelOptions]="{standalone: true}" (change)="onChangeNumericValue4($event)">
+          </mat-form-field>
+          <!-- SELECT -->
+          <mat-form-field >  
+            <mat-label>Seleccione</mat-label>
+            <mat-select [(value)]="nameValue4" (selectionChange)="onChangeSelected4()">
+              <mat-option *ngFor="let food of object2" [value]="food.value">
+                {{food.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      </form>
+    </pre>
+    </div>
+</div>

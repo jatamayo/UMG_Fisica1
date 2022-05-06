@@ -1,0 +1,67 @@
+<div>
+  <div class="topic1__marginLeft">
+    <p>
+      En el tema de caida libre, trabajaremos teniendo en cuenta el vacio, esto <br>
+      quiere decir no tomaremos en cuenta la resistencia del aire y tomaremos 
+      como base el promedio de gravedad.
+    </p>
+    <br>
+    <p>
+      <b>Aceleracion:</b> indica la variacion de la velocidad por unidad de
+      tiempo
+    </p>
+  </div>
+  <br><br>
+  <br><br>
+  <div class="general__displayFlex">
+    <!-- ****************************************************** -->
+    <div class="topic1__inputContainer">
+      <p>  <mat-icon  matTooltip="Datos Obligatorios (Velocidad Final, Tiempo)" aria-hidden="false" aria-label="Example home icon">help</mat-icon>(H) Altura
+      </p>
+      <br>
+      <mat-form-field>
+        <mat-label>Metros</mat-label>
+        <input type="number" matInput value={{altura}}  [(ngModel)]="altura"  [ngModelOptions]="{standalone: true}"/>
+      </mat-form-field>
+    </div>
+    <!-- ****************************************************** -->
+    <div class="topic1__inputContainer">
+      <p> <mat-icon  matTooltip="Datos Obligatorios (Velocidad Final)" aria-hidden="false" aria-label="Example home icon">help</mat-icon>(T) Tiempo</p>
+      <br>
+      <mat-form-field>
+        <mat-label>Segundos</mat-label>
+        <input type="number" matInput value={{tiempo}}  [(ngModel)]="tiempo"  [ngModelOptions]="{standalone: true}"/>
+      </mat-form-field>
+    </div>
+    <!-- ****************************************************** -->
+    <div class="topic1__inputContainer">
+      <p> <mat-icon aria-hidden="false" aria-label="Example home icon">help</mat-icon>(Vo) Velocidad Inicial</p>
+      <br>
+      <mat-form-field>
+        <mat-label>Metros/Segundo</mat-label>
+        <input type="number" matInput value={{velocidadInicial}}  [(ngModel)]="velocidadInicial"  [ngModelOptions]="{standalone: true}"/>
+      </mat-form-field>
+    </div>
+    <!-- ****************************************************** -->
+    <div class="topic1__inputContainer">
+      <p> <mat-icon  matTooltip="Datos Obligatorios ( Tiempo)" aria-hidden="false" aria-label="Example home icon">help</mat-icon>(Vf) Velocidad Final</p>
+      <br>
+      <mat-form-field>
+        <mat-label>Metros/Segundo</mat-label>
+        <input type="number" matInput value={{velocidadFinal}}  [(ngModel)]="velocidadFinal"  [ngModelOptions]="{standalone: true}"/>
+      </mat-form-field>
+    </div>
+    <!-- ****************************************************** -->
+    <div class="topic1__inputContainer">
+      <p> <mat-icon  aria-hidden="false" aria-label="Example home icon">help</mat-icon>(G) Gravedad-Tierra</p>
+      <br>
+      <mat-form-field>
+        <mat-label>Metros/Segundo²</mat-label>
+        <input type="number" value="9.8" matInput disabled/>
+      </mat-form-field>
+    </div>
+  </div>
+  <!--  -->
+  <button class="topic1__button" mat-raised-button color="primary" (click)="caidaLibre()">Calcular</button>
+  <button class="topic1__button" mat-raised-button color="" (click)="clear()">Limpiar</button>
+</div>
