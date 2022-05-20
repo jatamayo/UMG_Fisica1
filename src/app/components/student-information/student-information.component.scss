@@ -1,0 +1,21 @@
+.profile__mainContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profile__image{
+  width: 200px;
+  height: 200px;
+border-radius: 10000px;
+}
+.profile__container2{
+  margin-left: 100px;
+}
+.profile__title{
+  color:rgb(53, 53, 73);
+  font-size: 18px;
+  font-weight: bolder;
+}
+.profile__subTitle{
+margin-bottom: 10px;
+}
