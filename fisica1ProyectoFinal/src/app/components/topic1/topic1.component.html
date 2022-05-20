@@ -10,6 +10,11 @@
       <b>Aceleracion:</b> indica la variacion de la velocidad por unidad de
       tiempo
     </p>
+    <br><br>
+    <div>
+      Velocidad Inicial
+      <mat-slide-toggle [(ngModel)]="volocidadInicialActivar">Slide me!</mat-slide-toggle>
+    </div>
   </div>
   <br><br>
   <br><br>
@@ -35,7 +40,7 @@
     </div>
     <!-- ****************************************************** -->
     <div class="topic1__inputContainer">
-      <p> <mat-icon aria-hidden="false" aria-label="Example home icon">help</mat-icon>(Vo) Velocidad Inicial</p>
+      <p> <mat-icon  matTooltip="Datos Obligatorios (Velocidad Final, gravedad, tiempo)" aria-hidden="false" aria-label="Example home icon">help</mat-icon>(Vo) Velocidad Inicial</p>
       <br>
       <mat-form-field>
         <mat-label>Metros/Segundo</mat-label>

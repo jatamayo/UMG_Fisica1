@@ -11,10 +11,21 @@ export class Topic1Component implements OnInit {
   velocidadInicial = 0;
   velocidadFinal = 0;
   gravedad = 9.8;
+  volocidadInicialActivar = false;
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  GETVelocidadInicial(
+    velocidadFinal: number,
+    gravedad: number,
+    tiempo: number
+  ) {
+    let response = 0;
+    response = velocidadFinal - gravedad * tiempo;
+    return response;
+  }
 
   GETvelocidadFinalPositivo(
     velocidadInicial: number,
@@ -109,12 +120,6 @@ export class Topic1Component implements OnInit {
   }
 
   caidaLibre() {
-    console.log({
-      altura: this.altura,
-      tiempo: this.tiempo,
-      velocidadInicial: this.velocidadInicial,
-      velocidadFinal: this.velocidadFinal,
-    });
     // CALCULAR ALTURA
     if (this.altura === 0) {
       if (this.velocidadInicial >= 0 && this.velocidadFinal && this.tiempo) {
@@ -142,7 +147,16 @@ export class Topic1Component implements OnInit {
       }
     }
     // CALCULAR VELOCIDAD INICIAL
-
+    if (this.velocidadInicial === 0 && this.volocidadInicialActivar) {
+      console.log('calcular velocidad inicial');
+      if (this.velocidadFinal > 0 && this.gravedad && this.tiempo) {
+        this.velocidadInicial = this.GETVelocidadInicial(
+          this.velocidadFinal,
+          this.gravedad,
+          this.tiempo
+        );
+      }
+    }
     // CALCULAR VELOCIDAD FINAL
     if (this.velocidadFinal === 0) {
       if (this.velocidadInicial >= 0 && this.gravedad && this.tiempo) {

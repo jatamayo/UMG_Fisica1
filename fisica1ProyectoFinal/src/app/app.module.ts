@@ -9,6 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MeasurementConversionComponent } from './components/measurement-conversion/measurement-conversion.component';
 import { StudentInformationComponent } from './components/student-information/student-information.component';
@@ -34,6 +35,7 @@ import { Topic2Component } from './components/topic2/topic2.component';
     MatButtonModule,
     MatTooltipModule,
     MatIconModule,
+    MatSlideToggleModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
